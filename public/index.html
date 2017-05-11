@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Twitter Tracking with OpenLayers 3</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <link rel="stylesheet" href="https://openlayers.org/en/v3.20.1/css/ol.css" type="text/css">
+        <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css" type="text/css">
+        
+        <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+        <style>
+            body{
+                padding: 0;
+                margin: 0;
+                font-family: monospace;
+                overflow: hidden;
+            }
+            .totalTweetContent{
+                position: absolute;
+                left: 5px;
+                bottom: 5px;
+                font-weight: bold;
+                color: #ff5363;
+            }
+            .totalTweetContent>div{
+                float: left;
+                margin-left: 20px;
+            }
+            #tweetsContent{
+                position: absolute;
+                right:  5px;
+                top: 5px;
+                width: 300px;
+                max-height: 97%;
+                overflow: hidden;
+                color: #eee;
+                background-color: rgba(1,1,1,0.5);                
+            }
+            .tweet{
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map" class="map"></div>
+        <div class="totalTweetContent">
+            <div>
+                <i class="fa fa-twitter" aria-hidden="true"></i> <span id="totalTweet">0</span>
+            </div>
+            <div>
+                <i class="fa fa-hashtag" aria-hidden="true"></i> <span id="">0</span>
+            </div>
+            <div>
+                <i class="fa fa-users" aria-hidden="true"></i> <span id="">0</span>
+            </div>
+            <div>
+                <i class="fa fa-map-marker" aria-hidden="true"></i> <span id="totalMarkers">0</span>
+            </div>            
+        </div>
+        <div id="tweetsContent"></div>
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+        </script>
+        <script src="https://openlayers.org/en/v3.20.1/build/ol.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script src="./main.js"></script>
+        <script src="./io.js"></script>
+    </body>
+</html>
